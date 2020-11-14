@@ -2,15 +2,15 @@ package com.server.request;
 
 public abstract class ProtocolRequest {
 
-	private String data;
-	private String[] headers;
+	protected String data;
+	protected String[] headers;
 	
-	public ProtocolRequest(String data) {
+	protected ProtocolRequest(String data) {
 		this.data = data;
 		this.headers = new String[100];
 	}
 	
-	public ProtocolRequest(String data, String[] headers) {
+	protected ProtocolRequest(String data, String[] headers) {
 		this.data = data;
 		this.headers = headers;
 	}
