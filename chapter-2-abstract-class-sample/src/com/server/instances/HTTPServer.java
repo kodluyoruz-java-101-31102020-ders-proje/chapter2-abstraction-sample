@@ -14,6 +14,8 @@ public class HTTPServer extends Server {
 		
 		String requestContext = request.prepareContext();
 		
+		System.out.println(requestContext);
+		
 		if(!requestContext.startsWith("<HTTP>")) {
 			return null;
 		}

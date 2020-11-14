@@ -20,6 +20,8 @@ public class FTPServer extends Server {
 		
 		String requestContext = request.prepareContext();
 		
+		System.out.println(requestContext);
+		
 		if(!requestContext.startsWith("<FTP>")) {
 			return null;
 		}

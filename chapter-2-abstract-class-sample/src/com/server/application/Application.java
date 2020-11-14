@@ -19,11 +19,17 @@ public class Application {
 		String[] ftpHeaders = { "CompanyName:sahibindencom", "FileSize:10", "Mode:SYNC" };
 		ProtocolRequest ftpRequest = new FTPRequest("FTP DATA!", ftpHeaders);
 		
+		ftpRequest.addHeader("Xtype:UnixFile");
+		
 		//System.out.println(ftpRequest.prepareContext());
 		
 		String[] httpHeaders = { "CompanyName:sahibindencom", "ContentType:XML", "DataSize:100", "Mode:SYNC" };
 		String[] queryParameters = { "department=Engineering", "page=1" };
 		ProtocolRequest httpRequest = new HTTPRequest("HTTP DATA!", httpHeaders, queryParameters);
+		
+		httpRequest.addHeader("AcceptedContentType:String");
+		((HTTPRequest)httpRequest).addQueryParameter("query='Mehmet'");
+		((HTTPRequest)httpRequest).addQueryParameter("query='Hasan'");
 		
 		//System.out.println(httpRequest.prepareContext());
 		

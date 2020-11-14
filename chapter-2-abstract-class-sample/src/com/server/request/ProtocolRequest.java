@@ -24,7 +24,15 @@ public abstract class ProtocolRequest {
 	}
 	
 	public void addHeader(String header) {
-		this.headers[this.headers.length - 1] = header;
+		
+		String[] tmpHeaders = new String[this.headers.length + 1];
+		
+		for(int i=0; i < this.headers.length; i++) {
+			tmpHeaders[i] = this.headers[i];
+		}
+		
+		tmpHeaders[this.headers.length] = header;
+		this.headers = tmpHeaders;
 	}
 	
 	public abstract String prepareContext();

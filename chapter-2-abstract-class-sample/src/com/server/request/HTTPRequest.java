@@ -81,6 +81,14 @@ public class HTTPRequest extends ProtocolRequest {
 	}
 	
 	public void addQueryParameter(String queryParam) {
-		this.queryParameters[this.queryParameters.length - 1] = queryParam;
+		
+		String[] tmpQueryParameters = new String[this.queryParameters.length + 1];
+		
+		for(int i=0; i < this.queryParameters.length; i++) {
+			tmpQueryParameters[i] = this.queryParameters[i];
+		}
+		
+		tmpQueryParameters[this.queryParameters.length] = queryParam;
+		this.queryParameters = tmpQueryParameters;
 	}
 }
